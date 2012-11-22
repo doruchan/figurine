@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Figurine{% endblock %}
+
+{% block content %}
+
+{% if figurine and persone%}
+    <table>
+		<thead>
+			<tr>
+			<td></td>
+			{% for p in persone %}
+		   		<td  colspan="2">{{ p.nome }}</td>
+			{% endfor %}
+			</tr>
+		</thead>
+    {% for figu in figurine %}
+        <tr>
+			<td>{{ figu.numero }}</td>
+			{% for p in persone %}
+	   			<td>M</td><td>D</td>
+			{% endfor %}
+		</tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No figurine and persone are available.</p>
+{% endif %}
+
+{% endblock %}

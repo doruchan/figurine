@@ -1,0 +1,4 @@
+from scambio.models import Figurina, Scambio, Persona
+from django.contrib import admin
+
+admin.site.register(Figurina)

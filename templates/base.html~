@@ -1,0 +1,10 @@
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="{{ STATIC_URL }}base.css" />
+</head>
+<body>
+    <img src="sitelogo.gif" alt="Logo" />
+    {% block content %}{% endblock %}
+</body>
+</html>
