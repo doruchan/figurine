@@ -1,9 +1,15 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
-	<link rel="stylesheet" href="{{ STATIC_URL }}base.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" />
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+
 </head>
 <body>
     {% block content %}{% endblock %}
+	
+	
 </body>
+{% block script %}{% endblock %}
 </html>

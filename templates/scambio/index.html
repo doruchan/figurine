@@ -12,6 +12,7 @@
 			{% for p in persone %}
 		   		<td  colspan="2">{{ p.nome }}</td>
 			{% endfor %}
+			<td colspan="2"  id='add_user'>+</td>
 			</tr>
 		</thead>
     {% for figu in figurine %}
@@ -20,6 +21,7 @@
 			{% for p in persone %}
 	   			<td>M</td><td>D</td>
 			{% endfor %}
+			<td></td><td></td>
 		</tr>
     {% endfor %}
     </table>
@@ -27,4 +29,30 @@
     <p>No figurine and persone are available.</p>
 {% endif %}
 
+{% endblock %}
+
+
+{% block script %}
+<script>
+var clicked = null;
+$(document).ready(function(event){
+	$("#add_user").click(function(event){
+		console.log("show");
+		clicked = $(this);
+		clicked.append("<input type='text' id='new_user' />");
+		clicked.parent().append("<td  colspan='2'  id='add_user'>+</td>");
+		clicked.attr('id', '');
+		event.stopPropagation();
+	});
+	
+	$('html').click(function() {
+		//Hide the menus if visible
+		console.log(clicked);
+		if (clicked){
+			clicked.html($("#new_user").val());
+		}
+	});
+ 
+});
+</script>
 {% endblock %}
